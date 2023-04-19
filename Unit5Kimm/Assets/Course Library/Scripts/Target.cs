@@ -39,17 +39,29 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        gameManager.UpdateScore(pointValue);
+        if(gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //destroys objects when collided with the sensor at the bottom
         Destroy(gameObject);
+        //lets the bad objects fall through but when the good ones fall it says game over
+        if (!gameObject.CompareTag("Bad") && gameManager.isGameActive)
+        {
+            gameManager.UpdateLives(-1);
+        }
+
+
     }
     Vector3 RandomForce ()
     {
+        //random spawning of objects 
         return Vector3.up * Random.Range(minSpeed, maxSpeed);
     }
 
