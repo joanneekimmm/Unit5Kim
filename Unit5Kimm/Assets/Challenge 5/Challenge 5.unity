@@ -1043,7 +1043,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 116231999}
   gameOverText: {fileID: 919200876}
-  timer: {fileID: 673786109}
   titleScreen: {fileID: 92482018}
   restartButton: {fileID: 1902351379}
   targetPrefabs:
@@ -1051,7 +1050,6 @@ MonoBehaviour:
   - {fileID: 1996815852551487035, guid: 11bccc60726374a918b5c73120d47ab3, type: 3}
   - {fileID: 5626452297013284046, guid: c5bbabce5ea79419488492993bfdadf0, type: 3}
   - {fileID: 3867821073191959212, guid: 591e0b0a9b4dd4709ad61b99dabf57ef, type: 3}
-  timeLeft: 60
   isGameActive: 1
 --- !u!4 &1128873052
 Transform:
